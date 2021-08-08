@@ -8,7 +8,7 @@ const addNewEntry = async (iwr) => {
         // await new Iwr(lol).save();
         let obj = await Iwr.findOne({ _id : '610ec91b41bd4415fca06275' });
         
-        let lol = await Crypto.decrypt(obj.encrypted, obj.iv);
+        let lol = await Crypto.decrypt(obj.payload, obj.iv);
         console.log(lol);
     } catch (err) {
         console.error('Error while creating a new entry');

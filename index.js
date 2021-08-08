@@ -19,6 +19,6 @@ dB();
 app.use('/user', userRouter);
 
 /** Routes above this are not checked for auth token, below this are checked for auth token */
-// app.use(authorize);
+app.use(authorize);
 
 app.use('/iwr', iwrRouter);

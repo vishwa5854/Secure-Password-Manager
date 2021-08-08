@@ -5,8 +5,13 @@ const iwrSchema = mongoose.Schema({
         type     : Array,
         required : true
     },
-    encrypted : {
+    payload : {
         type     : String,
+        required : true
+    },
+    userId : {
+        type     : mongoose.Schema.Types.ObjectId,
+        ref      : 'user',
         required : true
     }
 }, { timestamps : true });
