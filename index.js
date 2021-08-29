@@ -15,6 +15,8 @@ app.listen(port, () => {
     console.log(`Server has been started on port ${port}`);
 });
 
+app.get("/", (req, res) => {});
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swagger.swaggerSpec, swagger.swaggerOptions));
 
 /** Initialising the database connection */
