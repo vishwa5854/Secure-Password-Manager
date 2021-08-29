@@ -199,7 +199,7 @@
 	"variable": [
 		{
 			"key": "base",
-			"value": "https://iwr.herokuapp.com"
+			"value": "https://iwrb.herokuapp.com"
 		}
 	]
 }
