@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "fbf97caa-f82a-4f2d-8f0a-f33956bf3536",
+		"name": "iwr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"test1\",\r\n    \"email\"    : \"test1@test.test\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/user/signUp",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"user",
+						"signUp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"test1\",\r\n    \"password\" : \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/user/login",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new entry",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRlc3QxIiwiX2lkIjoiNjEyYjYwNDZiZjY4NmExMTQwZTc3N2RmIiwiaWF0IjoxNjMwMjMzOTEwLCJleHAiOjE2MzEwOTc5MTB9.8Glx7gssv3q5utBoxst7mkvxe39GaHwg92g--N-CEIg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"vishwa5854\",\r\n    \"password\" : \"jV4ZIlwieVOnpSEgiCZL\",\r\n    \"website\"  : \"https://www.github.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/iwr/add",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"iwr",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRlc3QxIiwiX2lkIjoiNjEyYjYwNDZiZjY4NmExMTQwZTc3N2RmIiwiaWF0IjoxNjMwMjMzOTEwLCJleHAiOjE2MzEwOTc5MTB9.8Glx7gssv3q5utBoxst7mkvxe39GaHwg92g--N-CEIg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"testad\",\r\n    \"password\" : \"12345\",\r\n    \"website\"  : \"https://www.gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}/iwr/update/612b9df010226a1a24684350",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"iwr",
+						"update",
+						"612b9df010226a1a24684350"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRlc3QxIiwiX2lkIjoiNjEyYjYwNDZiZjY4NmExMTQwZTc3N2RmIiwiaWF0IjoxNjMwMjMzOTEwLCJleHAiOjE2MzEwOTc5MTB9.8Glx7gssv3q5utBoxst7mkvxe39GaHwg92g--N-CEIg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base}}/iwr/delete/612b9df010226a1a24684350",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"iwr",
+						"delete",
+						"612b9df010226a1a24684350"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRlc3QxIiwiX2lkIjoiNjEyYjYwNDZiZjY4NmExMTQwZTc3N2RmIiwiaWF0IjoxNjMwMjMzOTEwLCJleHAiOjE2MzEwOTc5MTB9.8Glx7gssv3q5utBoxst7mkvxe39GaHwg92g--N-CEIg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base}}/iwr/all",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"iwr",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "https://iwr.herokuapp.com"
+		}
+	]
+}
