@@ -13,6 +13,10 @@ app.listen(port, () => {
     console.log(`Server has been started on port ${port}`);
 });
 
+app.get("/", (req, res) => {
+    res.send('Hello!');
+});
+
 /** Initialising the database connection */
 dB();
 
