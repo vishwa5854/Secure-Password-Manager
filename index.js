@@ -1,10 +1,12 @@
-const express    = require('express');
-const app        = require('express')();
-const port       = process.env.PORT || '3000';
-const dB         = require('./models/dB').initialiseDbConnection;
-const userRouter = require('./routes/user');
-const iwrRouter  = require('./routes/iwr');
-const authorize  = require('./utils/jwt').validate;
+const express         = require('express');
+const app             = require('express')();
+const port            = process.env.PORT || '3000';
+const dB              = require('./models/dB').initialiseDbConnection;
+const userRouter      = require('./routes/user');
+const iwrRouter       = require('./routes/iwr');
+const authorize       = require('./utils/jwt').validate;
+const swaggerUi       = require('swagger-ui-express');
+const swagger         = require('./swagger/swagger');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,6 +18,8 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.send('Hello!');
 });
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swagger.swaggerSpec, swagger.swaggerOptions));
 
 /** Initialising the database connection */
 dB();

@@ -1,0 +1,122 @@
+tags:
+  - name: I will remember
+    description: Endpoints for storing passwords for a website.
+/iwr/add:
+  post:
+    tags:
+      - I will remember
+    summary: Creates a new entry
+    produces:
+      - application/json
+    consumes:
+      - application/json
+    parameters:
+      - name: Request body
+        in: body
+        schema:
+          type: object
+          properties:
+            userName:
+              type: string
+            password:
+              type: string
+              format: password
+            website:
+              type: string
+        required:
+          - userName
+          - password
+          - website
+    responses:
+      200:
+        description: New IWR has been created.
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              type: object
+
+      500:
+        description: Internal Server error
+
+/iwr/update/{iwrId}:
+  patch:
+    tags:
+      - I will remember
+    summary: Updates an entry
+    produces:
+      - application/json
+    consumes:
+      - application/json
+    parameters:
+      - name: Request body
+        in: body
+        schema:
+          type: object
+          properties:
+            userName:
+              type: string
+            password:
+              type: string
+              format: password
+            website:
+              type: string
+        required:
+          - userName
+          - password
+          - website
+    responses:
+      200:
+        description: IWR entry has been updated.
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+
+      500:
+        description: Internal Server error
+
+/iwr/delete/{iwrId}:
+  delete:
+    tags:
+      - I will remember
+    summary: Deletes an entry
+    produces:
+      - application/json
+    responses:
+      200:
+        description: IWR entry has been deleted.
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+
+      500:
+        description: Internal Server error
+
+
+/iwr/all:
+  get:
+    tags:
+      - I will remember
+    summary: Gets all apps for a given user
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Gets all IWR's integrated
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              type: object
+
+      500:
+        description: Internal Server error
+

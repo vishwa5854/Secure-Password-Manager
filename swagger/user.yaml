@@ -1,0 +1,84 @@
+tags:
+  - name: Users
+    description: Endpoints for managing users
+/user/login:
+  post:
+    tags:
+      - Users
+    summary: User Login
+    produces:
+      - application/json
+    consumes:
+      - application/json
+    parameters:
+      - name: Request body
+        in: body
+        schema:
+          type: object
+          properties:
+            userName:
+              type: string
+            password:
+              type: string
+              format: password
+        required:
+          - userName
+          - password
+    responses:
+      200:
+        description: User logged in successfully
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              type: object
+
+      404:
+        description: User doesn't exist
+      401:
+        description: Invalid Password
+      500:
+        description: Internal Server error
+
+/user/signUp:
+  post:
+    tags:
+      - Users
+    summary: Creating a new user.
+    produces:
+      - application/json
+    consumes:
+      - application/json
+    parameters:
+      - name: Request body
+        in: body
+        schema:
+          type: object
+          properties:
+            userName:
+              type: string
+            email:
+              type: string
+            password:
+              type: string
+              format: password
+        required:
+          - userName
+          - email
+          - password
+    responses:
+      201:
+        description: New account has been created
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            message:
+              type: string
+      500:
+        description: Internal Server error
+      400:
+        description: Missing Required Fields
