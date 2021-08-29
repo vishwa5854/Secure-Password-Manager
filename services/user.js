@@ -44,7 +44,7 @@ const validateUserCredentials = async (user) => {
                 throw new Error('Invalid password');
             } else {
                 /** Generating a new JWT token for authorization */
-                return generateToken({ userName });
+                return generateToken({ userName, _id : userFromDb["_id"] });
             }
         }
     } catch (err) {

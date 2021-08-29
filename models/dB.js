@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dbUrl    = require('../env').DB_URL;
 
 const initialiseDbConnection = () => {
-    mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (err) => {
+    mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify : false }, (err) => {
         if (err) {
             console.error(`Couldn't connect to dB on : ${dbUrl}`);
             console.error(err);

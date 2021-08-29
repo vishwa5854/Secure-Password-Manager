@@ -50,5 +50,4 @@ const decrypt = (encrypted, iv) => {
     });
 };
 
-// encrypt(JSON.stringify({ a : '123', b : '456'})).then(lol => console.log(lol))
 module.exports = { encrypt, decrypt }
