@@ -11,6 +11,11 @@ tags:
     consumes:
       - application/json
     parameters:
+      - name: Authorization
+        in: header
+        description: {access_token}
+        required: true
+        type: string
       - name: Request body
         in: body
         schema:
@@ -51,6 +56,11 @@ tags:
     consumes:
       - application/json
     parameters:
+      - name: Authorization
+        in: header
+        description: {access_token}
+        required: true
+        type: string
       - name: Request body
         in: body
         schema:
@@ -86,6 +96,12 @@ tags:
     summary: Deletes an entry
     produces:
       - application/json
+    parameters:
+      - name: Authorization
+        in: header
+        description: {access_token}
+        required: true
+        type: string
     responses:
       200:
         description: IWR entry has been deleted.
@@ -106,6 +122,12 @@ tags:
     summary: Gets all apps for a given user
     produces:
       - application/json
+    parameters:
+      - name: Authorization
+        in: header
+        description: {access_token}
+        required: true
+        type: string
     responses:
       200:
         description: Gets all IWR's integrated
