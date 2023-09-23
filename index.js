@@ -1,15 +1,17 @@
 const express         = require('express');
 const app             = require('express')();
-const port            = process.env.PORT || '3000';
+const port            = process.env.PORT || '3001';
 const dB              = require('./models/dB').initialiseDbConnection;
 const userRouter      = require('./routes/user');
 const iwrRouter       = require('./routes/iwr');
 const authorize       = require('./utils/jwt').validate;
 const swaggerUi       = require('swagger-ui-express');
 const swagger         = require('./swagger/swagger');
+const cors            = require('cors');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 app.listen(port, () => {
     console.log(`Server has been started on port ${port}`);
